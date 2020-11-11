@@ -1,6 +1,10 @@
+git init
+
 git clone https://github.com/Balirezaei/gittraining.git
 
-git push origin main
+$git add .
+$git commit -m "init"
+$git push origin main
 
 --git create branch 
 $git branch develope
@@ -15,5 +19,7 @@ $git checkout s1
 
 --if s1 remove in commit aaaaa and we want to remove
 $git checkout aaaaa -- s1
+
+--
 
 
