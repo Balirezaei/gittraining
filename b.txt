@@ -1,0 +1,19 @@
+git clone https://github.com/Balirezaei/gittraining.git
+
+git push origin main
+
+--git create branch 
+$git branch develope
+$git push origin develope
+
+$git config --global user.name ""
+$git config --global user.password ""
+
+
+--befor staging area rollback changes
+$git checkout s1
+
+--if s1 remove in commit aaaaa and we want to remove
+$git checkout aaaaa -- s1
+
+
