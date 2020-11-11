@@ -23,3 +23,4 @@ $git checkout aaaaa -- s1
 --
 
 
+git log --all --decorate --oneline --graph
