@@ -23,3 +23,7 @@ $git checkout aaaaa -- s1
 --
 
 
+--remove local branch 
+$git branch -d  sdn
+--remove remote branch
+$git push origin --delete <remote-branch-name>
