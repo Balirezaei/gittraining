@@ -28,3 +28,64 @@ $git branch -d  sdn
 $git push origin --delete <remote-branch-name>
 =======
 git log --all --decorate --oneline --graph
+
+
+--get diffrent from tow branches
+git diff master..feature
+
+
+--object Types in git 
+--commit			Tree			Blob
+--each commit has Autor , message and pointer to a tree
+--each tree has a pointer to file names, content, other trees 
+--each blob contains sourse, contents
+--*******************important****************
+--GIT is database of refrences
+--Branches are named pointers to commits
+
+--Example commit f36ec76dd193d63ed6c926a2560136ffa3258c52 is stored as follwing
+--\.git\objects\f3\6ec76dd193d63ed6c926a2560136ffa3258c52
+
+$git cat-file -p f36ec76dd193d63ed6c926a2560136ffa3258c52
+/*
+E:\repos\gittraining>git cat-file -p f36ec76dd193d63ed6c926a2560136ffa3258c52
+tree 51330644d907400af6db914c5456fa992faedc25
+parent 6d6e0c244ccd6433895db5ee90d5aa55e4d4890a
+author b.alirezaei@gmail.com <b.alirezaei@sadad.co.ir> 1605330327 +0330
+committer b.alirezaei@gmail.com <b.alirezaei@sadad.co.ir> 1605330327 +0330
+*/
+
+--Example of tree inside , each tree contains with blob address
+/*
+E:\repos\gittraining>git cat-file -p 51330644d907400af6db914c5456fa992faedc25
+100644 blob 4cf7d8dd4f46c58cde932a5351b04311336616fa    README.md
+100644 blob 8a876a0fd66757d573d2df46d81a96e71259041b    a.txt
+100644 blob 2f026347bef02900837cc27bb74a357491be8739    b.txt
+*/
+--Example of blob inside 
+
+/*
+E:\repos\gittraining>git cat-file -p 8a876a0fd66757d573d2df46d81a96e71259041b
+git clone https://github.com/Balirezaei/gittraining.git
+
+git push origin main
+
+
+
+develope branch
+
+On branch SDN
+
+On branch SDN 2
+
+
+main added new line
+
+
+SSO Change the  codeeeee
+*/
+
+اگر فایلی تغییر پیدا کند در بلاب جدید ذخیره میگردد اما در صورتی که بدون تغییر بماند فقط ادرس فایل قبلی که 
+در مسیر ابجکت موجود است در درخت کامیت ذخیره میگردد.
+
+
