@@ -27,7 +27,7 @@ $git branch -d  sdn
 --remove remote branch
 $git push origin --delete <remote-branch-name>
 =======
-git log --all --decorate --oneline --graph
+$git log --all --decorate --oneline --graph
 
 
 --get diffrent from tow branches
@@ -89,3 +89,7 @@ SSO Change the  codeeeee
 در مسیر ابجکت موجود است در درخت کامیت ذخیره میگردد.
 
 
+
+
+--Change the commit name 
+$git commit --amend --author "balirezaei <b.alirezaei@sadad.co.ir>"
