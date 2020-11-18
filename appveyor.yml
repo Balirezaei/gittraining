@@ -26,5 +26,4 @@ build_script:
  - node --version
 
 # prepare
- - cd ui-demo
  - npm run build:all
