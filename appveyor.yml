@@ -27,7 +27,7 @@ matrix:
 # to run your custom scripts instead of automatic MSBuild
 build_script:
  - node --version && npm --version
-  - ps: "npm --version # PowerShell" # Pass comment to PS for easier debugging
+
   # prepare
   - npm run clean:all
   - cd ui-demo
