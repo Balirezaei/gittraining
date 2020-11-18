@@ -32,6 +32,6 @@ build_script:
  
 test_script:
 # run tests
-- npm run test  --watch=false
+- ng test --watch=false
 # run e2e tests
 - npm run e2e
