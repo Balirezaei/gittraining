@@ -26,4 +26,12 @@ build_script:
  - node --version
 
 # prepare
- - npm run build:all
+ - npm run build
+ 
+ 
+ 
+test_script:
+# run tests
+- npm run test
+# run e2e tests
+- npm run e2e
