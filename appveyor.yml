@@ -29,7 +29,6 @@ build_script:
  - node --version && npm --version
 
   # prepare
-  - npm run clean:all
   - cd ui-demo
   - npm ci
   
