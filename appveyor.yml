@@ -50,5 +50,5 @@ on_success:
    - git add .
    - git commit
    - git push origin release-01
-   
+   - git push
 
