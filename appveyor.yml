@@ -41,18 +41,10 @@ test_script:
 - ng test --watch=false
 # run e2e tests
 
-deploy:
-  #release: grok-$(appveyor_repo_tag_name)
-  tag: $(APPVEYOR_REPO_TAG_NAME)
-  release: release-01
-  description: 'Release description'
-  provider: GitHub
- # artifact: *  
-  auth_token:
-    secure: 71db80f9be41cb83e5803d1cfe9eea02366b6d56
-  draft: false
-  prerelease: false
-  on:
-    branch: develope                # release from master branch only
-    appveyor_repo_tag: true
+on_success:
+   - git checkout relase-01
+   - git merge develope
+   - git commit
+   - git push origin relese-01
+   
 
