@@ -43,17 +43,17 @@ test_script:
 
 
 deploy:
+  #release: grok-$(appveyor_repo_tag_name)
   tag: $(APPVEYOR_REPO_TAG_NAME)
   release: release-01
   description: 'Release description'
   provider: GitHub
+  artifact: /.*\.zip/  
   auth_token:
     secure: 6acb441ed2587a7b97503e83ea05b5272aed593c # your encrypted token from GitHub
   draft: false
   prerelease: false
   on:
-    branch: develope                 # release from master branch only
-    APPVEYOR_REPO_TAG: true 
+ #   branch: develope                 # release from master branch only
     appveyor_repo_tag: true
-
 
