@@ -1,0 +1,37 @@
+install:
+  - cd ui-demo
+  # by default, all script lines are interpreted as batch
+  - echo Start install
+  # to run script as a PowerShell command prepend it with ps:
+  - ps: Write-Host 'Start install in PowerShell'
+  # batch commands start from cmd:
+  - cmd: echo Start install in cmd
+  # install nodejs and dependencies both global and local
+  # use appveyor-retry to retry if npm ci fails
+  - cmd: appveyor-retry powershell Install-Product node $env:nodejs_version
+  - npm install -g npm@6.4.1
+  - set PATH=%APPDATA%\npm;%PATH%
+  - npm install -g codeclimate-test-reporter @angular/cli@8.2.0
+  - npm ci
+  # rebuild again node-sass
+  - npm rebuild node-sass --force
+
+
+environment:
+  matrix:
+  - nodejs_version: "10"
+
+
+build_script:
+ - node --version
+
+# prepare
+ - npm run build
+ 
+ 
+ 
+test_script:
+# run tests
+- ng test --watch=false
+# run e2e tests
+- npm run e2e
