@@ -43,6 +43,7 @@ test_script:
 
 
 deploy:
+  tag: $(APPVEYOR_REPO_TAG_NAME)
   release: release-01
   description: 'Release description'
   provider: GitHub
