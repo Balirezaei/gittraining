@@ -1,7 +1,3 @@
- branches:
-    only:
-      - develope
-
 install:
   - cd ui-demo
   # by default, all script lines are interpreted as batch
@@ -19,6 +15,10 @@ install:
   - npm ci
   # rebuild again node-sass
   - npm rebuild node-sass --force
+
+branches:
+    only:
+      - develope
 
 
 environment:
