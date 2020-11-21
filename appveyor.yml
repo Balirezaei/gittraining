@@ -47,7 +47,7 @@ on_success:
    - git config --global user.email "b.alirezaei@gmail.com"
    - git config --global user.name "balirezaei"
    - git merge develope
-   - git add
+   - git add .
    - git commit
    - git push origin release-01
    
