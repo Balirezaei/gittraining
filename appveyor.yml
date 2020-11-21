@@ -38,4 +38,20 @@ test_script:
 # run tests
 - ng test --watch=false
 # run e2e tests
-- npm run e2e
+
+
+
+
+deploy:
+  release: release-01
+  description: 'Release description'
+  provider: GitHub
+  auth_token:
+    secure: 6acb441ed2587a7b97503e83ea05b5272aed593c # your encrypted token from GitHub
+  draft: false
+  prerelease: false
+  on:
+    branch: develope                 # release from master branch only
+    APPVEYOR_REPO_TAG: true 
+
+
