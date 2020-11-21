@@ -20,7 +20,6 @@ install:
   # rebuild again node-sass
   - npm rebuild node-sass --force
 
-
 environment:
   matrix:
   - nodejs_version: "10"
@@ -44,7 +43,8 @@ test_script:
 on_success:
    - git checkout release-01
    - git config --global credential.helper store
-  - ps: Set-Content -Path "$HOME\.git-credentials" -Value "https://71db80f9be41cb83e5803d1cfe9eea02366b6d56:x-oauth-basic@github.com`n" -NoNewline
+   - cmd:echo "https://$($env:access_token)@github.com" 
+  # - ps: Set-Content -Path "$HOME\.git-credentials" -Value "https://71db80f9be41cb83e5803d1cfe9eea02366b6d56:x-oauth-basic@github.com`n" -NoNewline
    - git config --global user.email "b.alirezaei@gmail.com"
    - git config --global user.name "balirezaei"
 
