@@ -48,7 +48,7 @@ deploy:
   release: release-01
   description: 'Release description'
   provider: GitHub
-  artifact: /.*\.zip/  
+  artifact: *  
   auth_token:
     secure: 71db80f9be41cb83e5803d1cfe9eea02366b6d56
   draft: false
