@@ -42,9 +42,9 @@ test_script:
 # run e2e tests
 
 on_success:
-   - git checkout relase-01
+   - git checkout release-01
    - git merge develope
    - git commit
-   - git push origin relese-01
+   - git push origin release-01
    
 
