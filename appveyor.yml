@@ -46,10 +46,9 @@ on_success:
    - git remote set-url origin https://balirezaei:961f8fc3ca450279367f019078176b2b38e4158f@github.com/balirezaei/gittraining.git/
    - git checkout release-01
    - git config --global credential.helper store
-   - ps: Set-Content -Path "$HOME\.git-credentials" -Value "https://$($env:access_token):x-oauth-basic@github.com`n" -NoNewline
+    #- ps: Set-Content -Path "$HOME\.git-credentials" -Value "https://$($env:access_token):x-oauth-basic@github.com`n" -NoNewline
    - git config --global user.email "b.alirezaei@gmail.com"
-   - git config --global user.name "balirezaei"
-   - git config --global user.password "961f8fc3ca450279367f019078176b2b38e4158f"   
+   - git config --global user.name "balirezaei"   
    - git merge develope
    - git add .
    - git commit -m "update relase from ci"
