@@ -48,7 +48,7 @@ on_success:
    - git config --global user.name "balirezaei"
    - git merge develope
    - git add .
-   - git commit
+   - git commit -m "update relase from ci"
    - git push origin release-01
    - git push
 
