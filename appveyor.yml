@@ -46,6 +46,7 @@ on_success:
    - ps: Set-Content -Path "$HOME\.git-credentials" -Value "https://$($env:access_token):x-oauth-basic@github.com`n" -NoNewline
    - git config --global user.email "b.alirezaei@gmail.com"
    - git config --global user.name "balirezaei"
+   - git config --global user.password "9686e6f50159d85304fa494825a106b9b2e05989"
    - git merge develope
    - git add .
    - git commit -m "update relase from ci"
