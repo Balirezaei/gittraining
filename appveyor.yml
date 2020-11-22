@@ -24,7 +24,7 @@ environment:
   matrix:
   - nodejs_version: "10"
   access_token:
-    secure: 9686e6f50159d85304fa494825a106b9b2e05989 
+    secure: 961f8fc3ca450279367f019078176b2b38e4158f 
    
 
 build_script:
@@ -43,12 +43,13 @@ test_script:
 
 on_success:
    - cd ..
+   - git remote set-url origin https://balirezaei:961f8fc3ca450279367f019078176b2b38e4158f@github.com/balirezaei/gittraining.git/
    - git checkout release-01
    - git config --global credential.helper store
    - ps: Set-Content -Path "$HOME\.git-credentials" -Value "https://$($env:access_token):x-oauth-basic@github.com`n" -NoNewline
    - git config --global user.email "b.alirezaei@gmail.com"
    - git config --global user.name "balirezaei"
-   - git config --global user.password "9686e6f50159d85304fa494825a106b9b2e05989"
+   - git config --global user.password "961f8fc3ca450279367f019078176b2b38e4158f"   
    - git merge develope
    - git add .
    - git commit -m "update relase from ci"
