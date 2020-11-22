@@ -24,7 +24,7 @@ environment:
   matrix:
   - nodejs_version: "10"
   access_token:
-    secure: 71db80f9be41cb83e5803d1cfe9eea02366b6d56
+    secure: 9686e6f50159d85304fa494825a106b9b2e05989 
    
 
 build_script:
