@@ -1,3 +1,7 @@
+branches:
+    only:
+      - develope
+
 install:
   - cd ui-demo
   # by default, all script lines are interpreted as batch
@@ -16,15 +20,13 @@ install:
   # rebuild again node-sass
   - npm rebuild node-sass --force
 
-branches:
-    only:
-      - develope
-
 
 environment:
   matrix:
   - nodejs_version: "10"
-
+  access_token:
+    secure: 961f8fc3ca450279367f019078176b2b38e4158f 
+   
 
 build_script:
  - node --version
@@ -41,15 +43,18 @@ test_script:
 
 
 
-deploy:
-  release: release-01
-  description: 'Release description'
-  provider: GitHub
-  auth_token:
-    secure: 6acb441ed2587a7b97503e83ea05b5272aed593c # your encrypted token from GitHub
-  draft: false
-  prerelease: false
-  on:
-    branch: develope                 # release from master branch only
-    APPVEYOR_REPO_TAG: true 
-    
+on_success:
+   - cd ..
+   - git remote set-url origin https://balirezaei:961f8fc3ca450279367f019078176b2b38e4158f@github.com/balirezaei/gittraining.git   
+   - git config --global credential.helper store
+   - git config credential.helper store
+   - git checkout release-01
+    #- ps: Set-Content -Path "$HOME\.git-credentials" -Value "https://$($env:access_token):x-oauth-basic@github.com`n" -NoNewline
+   - git config --global user.email "b.alirezaei@gmail.com"
+   - git config --global user.name "balirezaei"   
+   - git merge develope
+   - git add .
+   - git commit -m "update relase from ci"
+   - git push origin release-01
+   - git push
+
